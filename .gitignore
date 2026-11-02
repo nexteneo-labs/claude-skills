@@ -1,0 +1,4 @@
+# Résultats des tests de skills : sorties de runs, notes, constats de sécurité
+*-workspace/
+# Cas de test : contiennent le contenu de tickets internes
+*/evals/
