@@ -46,6 +46,13 @@ Réflexe : avant d'ajouter un scénario, vérifier si un scénario existant peut
 - **Regrouper** quand les effets partent de la même situation (S10 teste à la fois la limite à 30, le mail groupé et le destinataire), ou quand plusieurs variantes donnent le même résultat (S6 teste à la fois le passage en Forcé et le rattachement à une PCA).
 - **Séparer** quand le titre ne peut plus dire en quelques mots ce que le scénario teste, ou quand les effets demandent des situations différentes qu'il faudrait mélanger dans une seule frise.
 
+## Partir d'un état, ne tester que sa propre spec
+
+Les scénarios servent de base aux tests automatisés. Une spec ne teste que ses règles, sinon chaque nouveau ticket reteste les précédents.
+
+- Le déroulé part d'un **état** (« 30 compteurs sont en alerte »), que le test pose directement. Une action d'un autre ticket n'y figure que si elle déclenche une règle de celui-ci (S3 de `exemple-f4.md` : un rattachement à une autre PCA en pleine panne).
+- Comment tester un scénario (unitaire, composant, navigateur) relève de l'approche technique.
+
 ## Pas de mécanisme dans un scénario
 
 Un scénario ne teste que ce que le produit voit. Un scénario « secondes ignorées » ou « le cron passe à :15 » teste un mécanisme : il sort de la spec, comme la règle qui le portait.

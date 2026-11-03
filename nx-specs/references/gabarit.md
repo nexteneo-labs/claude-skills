@@ -53,15 +53,13 @@ Les trois paragraphes doivent se lire en une minute. Le lecteur, humain ou IA, c
 
 ## 2. Maquette
 
-La maquette fait référence : on ne redécrit pas l'écran en texte. Chez Nexteneo, la maquette est un lien Claude Design.
+La maquette fait foi pour tout ce qui est statique (contenu, libellés fixes, couleurs, mise en page, version mobile) : la spec ne le redit jamais. Chez Nexteneo, c'est un lien Claude Design.
 
-- **Nouvel écran** : le lien suffit. Le texte ajoute seulement ce qu'une image ne peut pas montrer : une valeur par défaut, un ordre de tri…
+- **Nouvel écran** : le lien suffit.
 - **Écran existant** : le texte liste ce qui est ajouté ou modifié, sans le détailler. Exemple : « Fiche compteur : nouvelle ligne « Monitoring » et nouveau bloc « État ». »
-- Ce que l'image ne montre pas :
-  - toujours vrai ➡️ une ligne sous la maquette suffit ;
-  - dépend d'une situation ➡️ c'est une règle, dans la section Règles.
+- Les éléments d'autres tickets peuvent y apparaître : une ligne le dit.
 
-Le statique va dans la maquette, ce qui dépend d'une situation va dans les règles. Exemple : la colonne « Statut » et son filtre sont dans la maquette ; quand le statut vaut « Joignable », « Injoignable » ou « N/A » est une règle.
+Le statique va dans la maquette ; ce qui dépend d'une situation, ou que la maquette ne peut pas montrer (un ordre de tri, une valeur par défaut), va dans les règles. Exemple : la colonne « Statut » et son filtre sont dans la maquette ; quand le statut vaut « Joignable », « Injoignable » ou « N/A » est une règle.
 
 Pas de lien Claude Design encore ? Mettre `Maquette : à venir (lien Claude Design)` et l'ajouter aux questions ouvertes.
 
@@ -84,5 +82,5 @@ Une liste numérotée. Chaque question dit ce qui bloque et, si possible, qui pe
 Les anciens tickets contiennent souvent « Préconditions », « Impacts », « Pour les devs », « Checklist » ou « Acceptance criteria ».
 
 - Acceptance criteria et checklists deviennent des **scénarios**.
-- Les dépendances entre tickets (« à livrer avec DEV-1037 ») ne vont pas dans la spec : elles sont déjà liées dans Jira, et tous les tickets d'un sprint sont livrés ensemble. La spec décrit le comportement attendu une fois le sprint livré. Si ce comportement repose sur ce qu'un autre ticket définit, cite ce ticket là où c'est utile au lecteur, sans parler d'ordre de livraison.
+- Les dépendances entre tickets (« à livrer avec DEV-1037 ») ne vont pas dans la spec : elles sont déjà liées dans Jira, et tous les tickets d'un sprint sont livrés ensemble. La spec décrit le sprint livré. Un autre ticket n'est cité que dans une règle qui repose sur lui. Ce qui lui appartient ne se décrit pas ici, même par un renvoi (« ce que fait le clic : voir DEV-1037 ») ; s'il manque, il va dans « Trouvé en passant ».
 - Les notes techniques (chemins de fichiers, composants, guards, noms de champs) sortent de la spec. Ne les jette pas sans le dire : signale-les à l'utilisateur et demande où il veut les garder, par exemple dans un commentaire du ticket pour l'étape d'approche technique.

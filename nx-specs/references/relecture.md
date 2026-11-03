@@ -22,7 +22,8 @@ Lance les passes **dans l'ordre** : chaque passe travaille sur la spec corrigée
 > - Un terme défini mais jamais utilisé, ou utilisé sous un autre mot. Un mot au sens peu intuitif utilisé dans plusieurs règles sans être défini.
 > - Une règle qui ne couvre pas toutes les valeurs possibles de son entrée. Vérifie dans le code les valeurs réelles : rôles, statuts, types, états, cas vides ou nuls.
 > - Deux règles qui se contredisent, ou une condition recopiée au lieu de s'appuyer sur un terme.
-> - Un comportement actuel du produit que la spec change sans le dire, ou qu'elle ignore alors qu'il interagit avec la feature : droits, données existantes au moment de la mise en service, suppression, désactivation, opérateurs en marque blanche.
+> - Un comportement actuel du produit que la spec change sans le dire, ou qu'elle ignore alors qu'il interagit avec la feature : droits, données existantes au moment de la mise en service, suppression, désactivation, opérateurs en marque blanche. Ce qui relève d'un autre ticket n'est pas un trou : signale-le à part, pour « Trouvé en passant ».
+> - Une phrase qui redit la maquette : propose de la retirer.
 > - Une exclusion du hors périmètre sans raison, ou un cas que la spec devrait exclure explicitement.
 > - Une règle qui surprend sans ligne ➡️ pour dire pourquoi.
 >
