@@ -34,8 +34,8 @@ Lance les passes **dans l'ordre** : chaque passe travaille sur la spec corrigée
 >
 > 1. Dresse la liste de tous les effets des règles : chaque ligne de table (R1.1, R1.2…), chaque branche, chaque exception (« sauf si », « tant que »), chaque contenu de message.
 > 2. Pour chaque effet, cherche les scénarios dont la colonne Règles le cite. Un effet sans scénario est un trou : propose un scénario, ou un ajout à un scénario existant si la même situation permet de le tester.
-> 3. Pour chaque scénario, recalcule le résultat attendu à partir de la situation et des seules règles citées. Signale tout résultat qu'on ne peut pas calculer sans deviner, ou qui contredit une règle.
-> 4. Signale un titre qui ne dit pas ce que le scénario teste, une situation sans valeurs concrètes, et deux scénarios qu'on pourrait fusionner sans perdre en lisibilité.
+> 3. Pour chaque scénario, recalcule le résultat attendu à partir du déroulé et des seules règles citées. Signale tout résultat qu'on ne peut pas calculer sans deviner, ou qui contredit une règle.
+> 4. Signale un titre qui ne dit pas ce que le scénario teste, un déroulé sans valeurs concrètes, et deux scénarios qu'on pourrait fusionner sans perdre en lisibilité.
 
 ## Passe 3 : pas de technique
 

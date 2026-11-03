@@ -4,16 +4,16 @@ Les règles décident, les scénarios vérifient. Un scénario est une situation
 
 ## Format
 
-| # | Situation | Résultat attendu | Règles |
+| # | Déroulé | Résultat attendu | Règles |
 | --- | --- | --- | --- |
 | S5 | **De nouveau monitoré après une pause**<br>10:00 : lecture réussie du compteur monitoré, puis toutes ses lectures échouent.<br>11:30 : le smart charging de sa PCA est désactivé.<br>14:00 : il est réactivé. | Mail entre 11:00 et 11:10. Aucun mail à 14:00. Nouveau mail entre 15:00 et 15:10. | R1.2, R1.3, R3 |
 
 - **#** : S1, S2… pour citer le scénario dans un ticket ou un test.
-- **Situation** : un titre en gras qui dit ce que le scénario teste. Puis des heures et des valeurs concrètes, un événement par ligne.
+- **Déroulé** : un titre en gras qui dit ce que le scénario teste. Puis des heures et des valeurs concrètes, un événement par ligne.
 - **Résultat attendu** : ce qu'on observe, et ce qui ne se passe pas.
 - **Règles** : les effets de règle dont dépend le résultat. R1.3 = 3e ligne de la table de R1.
 
-Un scénario se suffit à lui-même : avec la situation et les règles citées, on calcule le résultat sans rien deviner.
+Un scénario se suffit à lui-même : avec le déroulé et les règles citées, on calcule le résultat sans rien deviner.
 
 ## Couverture : chaque effet est testé
 
@@ -25,7 +25,7 @@ Un lecteur qui découvre le scénario doit voir ce qu'il vérifie et pourquoi on
 
 À éviter :
 
-| Situation | Résultat attendu |
+| Déroulé | Résultat attendu |
 | --- | --- |
 | Compteur passé en Monitoring Forcé à 14:20 | Pas de mail entre 15:20 et 15:30 |
 
@@ -33,7 +33,7 @@ Le compteur était-il monitoré avant ? En panne depuis quand ? Pourquoi ce scé
 
 À écrire :
 
-| Situation | Résultat attendu |
+| Déroulé | Résultat attendu |
 | --- | --- |
 | **Réglages changés en pleine panne**<br>14:00 : lecture réussie du compteur, monitoré par le smart charging de sa PCA, puis toutes ses lectures échouent.<br>14:20 : il passe en Monitoring Forcé. | Mail entre 15:00 et 15:10, pas entre 15:20 et 15:30. |
 

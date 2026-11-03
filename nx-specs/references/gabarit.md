@@ -71,7 +71,7 @@ Deux sous-parties : les **Termes**, puis les règles **R1, R2…**. Voir `regles
 
 ## 4. Scénarios
 
-Un tableau `# | Situation | Résultat attendu | Règles`. Voir `scenarios.md`.
+Un tableau `# | Déroulé | Résultat attendu | Règles`. Voir `scenarios.md`.
 
 ## 5. Questions ouvertes
 
