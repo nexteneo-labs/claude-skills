@@ -2,7 +2,7 @@
 
 Une spec décrit le comportement attendu d'une feature, tel qu'on peut l'observer : ce que voit un utilisateur, ce qui part par mail, ce qui est autorisé ou refusé. Elle ne dit pas comment le construire.
 
-Elle tient en quatre sections, plus une cinquième tant qu'il reste des questions ouvertes.
+Elle tient en quatre sections, plus une cinquième tant qu'il reste des questions ouvertes, et parfois une annexe.
 
 | # | Section | Contenu |
 | --- | --- | --- |
@@ -11,6 +11,7 @@ Elle tient en quatre sections, plus une cinquième tant qu'il reste des question
 | 3 | Règles | Des termes, puis le comportement attendu pour chaque situation possible. |
 | 4 | Scénarios | Des situations concrètes avec leur résultat attendu, qui testent chaque règle. |
 | 5 | Questions ouvertes | Seulement s'il en reste. Leur présence veut dire que la spec n'est pas terminée. |
+| | Annexe : enquête | Facultative. Les chiffres et les options écartées qui ont orienté les décisions. |
 
 ## Où se place chaque altitude
 
@@ -76,6 +77,25 @@ Un tableau `# | Déroulé | Résultat attendu | Règles`. Voir `scenarios.md`.
 Une liste numérotée. Chaque question dit ce qui bloque et, si possible, qui peut trancher. Quand il en reste au moins une, la spec commence par la ligne :
 
 > ⚠️ Spec non terminée : N question(s) ouverte(s), voir la section 5.
+
+## Annexe : enquête
+
+Section facultative. Elle garde ce qui a orienté les décisions : les chiffres mesurés et les options étudiées puis écartées. Sans elle, ces éléments se perdent à la fin du grill, et la prochaine personne qui reprend le sujet refait l'enquête, ou rouvre un débat déjà tranché. Elle sert aussi de trace datée pour les dossiers CIR/CII.
+
+**Quand l'écrire** : quand une décision s'appuie sur des chiffres mesurés (dans la base, les logs, un export), ou quand des options ont été étudiées puis écartées. Sinon, on ne met pas l'annexe.
+
+**Ce qu'elle contient** :
+
+- **Constat** : la situation qui a lancé le sujet, avec des exemples concrets.
+- **Mesures** : chaque chiffre avec sa date et sa source (« base de production, 5 novembre 2026 »), et ce qu'il ne dit pas (un biais, des valeurs écartées).
+- **Options étudiées et écartées** : un tableau `Option | Pourquoi elle est écartée`.
+- **Liens** : les tickets et idées liés.
+
+**Ses limites** :
+
+- Elle commence par la ligne : *Annexe informative : en cas d'écart, les règles font foi.* Elle explique les décisions sans en prendre aucune.
+- Pas de technique, comme dans le reste de la spec : les mesures sont décrites avec les mots du produit. Les requêtes qui ont produit les chiffres vont dans un commentaire du ticket, si l'utilisateur veut les garder.
+- Une ligne ➡️ d'une règle donne le pourquoi en une phrase. L'annexe garde le détail : on n'y recopie pas les règles.
 
 ## Ce qui n'entre dans aucune section
 

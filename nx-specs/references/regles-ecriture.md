@@ -97,3 +97,5 @@ Ajoute une ligne introduite par ➡️, en italique, seulement si un lecteur pou
 > ➡️ *Au-delà de 30, la panne est générale (réseau, serveur) : une liste de compteurs serait illisible, et déjà fausse au moment où on la lit.*
 
 Sans cette ligne, le 31e compteur sans mail ressemble à un bug, et un dev ou une IA risque de le « corriger ». Elle garde aussi la trace du pourquoi : si le contexte change, on sait quoi revoir.
+
+La ligne ➡️ tient en une phrase. Si le pourquoi repose sur des chiffres mesurés ou sur des options écartées, leur détail va dans l'annexe facultative « enquête » (voir `gabarit.md`).

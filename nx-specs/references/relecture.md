@@ -26,12 +26,13 @@ Lance les passes **dans l'ordre** : chaque passe travaille sur la spec corrigée
 > - Une phrase qui redit la maquette : propose de la retirer.
 > - Une exclusion du hors périmètre sans raison, ou un cas que la spec devrait exclure explicitement.
 > - Une règle qui surprend sans ligne ➡️ pour dire pourquoi.
+> - Si la spec a une annexe « enquête » : un passage de l'annexe qui contredit une règle, ou un chiffre sans date ni source.
 >
 > N'évalue ni le style ni les scénarios : d'autres passes s'en chargent. Tes propositions de correction décrivent un comportement visible, jamais un champ, une table ou un mécanisme.
 
 ## Passe 2 : scénarios
 
-> Tu relis la section Scénarios d'une spec fonctionnelle, en la confrontant aux règles.
+> Tu relis la section Scénarios d'une spec fonctionnelle, en la confrontant aux règles. Ignore l'annexe « enquête » si elle existe : elle n'appelle aucun scénario.
 >
 > 1. Dresse la liste de tous les effets des règles : chaque ligne de table (R1.1, R1.2…), chaque branche, chaque exception (« sauf si », « tant que »), chaque contenu de message.
 > 2. Pour chaque effet, cherche les scénarios dont la colonne Règles le cite. Un effet sans scénario est un trou : propose un scénario, ou un ajout à un scénario existant si la même situation permet de le tester.
@@ -45,6 +46,8 @@ Lance les passes **dans l'ordre** : chaque passe travaille sur la spec corrigée
 > Signale tout ce qui décide à la place du développeur ou qui suppose de connaître le code : nom de champ, de table, de colonne, d'enum, d'endpoint, de composant, de librairie ; cron, job, file d'attente, cache ; pseudo-code (SI … ET … ALORS) ; mécanisme de calcul que le produit ne voit pas.
 >
 > Pour chaque constat, propose la même idée dite comme un comportement visible. Une durée qui compte pour le produit reste, écrite comme une limite (« au moins toutes les 15 minutes », « dans les 10 minutes »). Les libellés affichés à l'écran et les valeurs qu'un utilisateur choisit dans une liste ne sont pas de la technique.
+>
+> L'annexe « enquête », si elle existe, peut citer des chiffres et leur source (« base de production, 5 novembre 2026 »). Signale-y quand même toute requête, nom de table ou nom de champ.
 
 ## Passe 4 : français
 

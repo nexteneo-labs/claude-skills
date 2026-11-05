@@ -88,6 +88,8 @@ Angles à couvrir, sous forme de questions produit, quand ils s'appliquent :
 - l'effet d'ensemble : le même événement sur tout le parc en même temps ;
 - la sécurité : ce qu'un utilisateur ne doit jamais voir ni faire, en particulier sur les données d'un autre client, et ce qui se passe si une action sensible (commande à distance, changement de droits, paiement) est déclenchée par la mauvaise personne, rejouée ou lancée en masse.
 
+Pendant le grill, note au fil de l'eau chaque chiffre que tu mesures (avec sa date et sa source) et chaque option écartée (avec sa raison) : ils nourrissent l'annexe facultative « enquête » (voir `references/gabarit.md`).
+
 Arrête le grill quand chaque section du gabarit peut être remplie sans rien inventer. Annonce-le, puis écris la spec.
 
 ### 4. Écrire la spec
@@ -111,6 +113,7 @@ La spec est écrite en markdown, prête à être collée dans la description du 
 ### R1. <titre>
 ## 4. Scénarios
 ## 5. Questions ouvertes   ← seulement s'il en reste
+## Annexe : enquête   ← facultative
 ```
 
 Écris comme tu l'expliquerais à un collègue, avec des phrases courtes.
