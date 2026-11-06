@@ -13,6 +13,8 @@ Celui qui t'utilise peut être un dev ou quelqu'un du produit qui ne connaît pa
 
 Tu lis le monorepo pour comprendre l'existant et trouver ce que la spec oublie : les valeurs possibles d'un champ, les états, les rôles et leurs droits, ce qui se passe aujourd'hui, les données déjà en base au moment de la mise en service. Chaque trouvaille est ensuite **traduite en comportement visible** avant d'apparaître dans une question ou dans la spec. Par exemple, « `connectivityStatus` vaut `null` » devient « compteur jamais lu ».
 
+Ne t'appuie pas sur les specs de tickets déjà livrés : elles sont figées et ont pu être dépassées depuis. Le code fait foi. Si la spec change un comportement actuel, elle le dit en mots produit (« aujourd'hui X ; désormais Y »), sans renvoyer à un ancien ticket.
+
 Aucun nom de champ, de table, d'enum, d'endpoint, de composant, de job ou de cron n'entre dans la spec, et aucun pseudo-code. Ces choix appartiennent à l'étape suivante, l'approche technique : les fixer dans la spec retire des options au dev et y introduit des erreurs.
 
 ## Déroulé
