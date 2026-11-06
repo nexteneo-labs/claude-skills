@@ -6,11 +6,11 @@ Chaque sous-agent reçoit :
 
 - le texte complet de la spec (colle-le dans son prompt, il n'a pas accès à la conversation) ;
 - le prompt de sa passe ci-dessous ;
-- pour la passe 1 seulement : le chemin du monorepo.
+- pour les passes 1 et 2 seulement : le chemin du monorepo.
 
 Il renvoie une liste de constats. Pour chacun : l'endroit (R3, S5, Principe…), le problème en une phrase, une correction proposée. S'il ne trouve rien, il le dit.
 
-Lance les passes **dans l'ordre** : chaque passe travaille sur la spec corrigée par la précédente. Toi, l'agent principal, tu appliques les corrections que tu juges justes. Une correction qui change une décision produit ne s'applique pas en silence : pose la question à l'utilisateur (une seule à la fois, comme pendant le grill).
+Lance les passes **dans l'ordre** : chaque passe travaille sur la spec corrigée par la précédente. Toi, l'agent principal, tu appliques les corrections que tu juges justes, y compris celles qui changent une décision produit quand le choix est évident : il garde l'intention de la règle et ne retire rien d'important à l'utilisateur. Ne pose une question (une seule à la fois, comme pendant le grill) que pour un vrai dilemme : plusieurs options raisonnables aux conséquences différentes, ou une correction qui retire quelque chose d'important. Chaque décision produit que tu as tranchée seul figure dans le résumé de la relecture.
 
 ---
 
@@ -30,7 +30,21 @@ Lance les passes **dans l'ordre** : chaque passe travaille sur la spec corrigée
 >
 > N'évalue ni le style ni les scénarios : d'autres passes s'en chargent. Tes propositions de correction décrivent un comportement visible, jamais un champ, une table ou un mécanisme.
 
-## Passe 2 : scénarios
+## Passe 2 : faisabilité
+
+> Tu relis une spec fonctionnelle Nexteneo avec l'œil du développeur qui l'implémentera. Le monorepo est à `<chemin>` : tu peux le lire, sans le modifier. Ne planifie pas la technique : cherche seulement un comportement demandé qui ne pourra pas être livré tel quel.
+>
+> Signale uniquement :
+> - un comportement impossible quelle que soit l'implémentation ; s'il n'est impossible que sur une partie du parc, dis-le : c'est un cas à traiter, pas forcément un blocage ;
+> - un comportement possible, mais dont le coût est clairement hors de proportion : il demande une brique entière pour un cas marginal, ou la seule façon de le tenir contredit une autre règle ou un ➡️ de la spec.
+>
+> Au moindre doute, ne signale rien : un développeur tranchera à l'implémentation. Ce qui demande simplement du travail n'est pas un constat.
+>
+> Pour chaque constat : l'endroit, le blocage en une phrase sans jargon, et une alternative dite comme un comportement visible, éventuellement repoussée à plus tard. Ne propose jamais d'ajouter de la technique à la spec.
+
+Une ligne ➡️ peut expliquer la limite en mots simples.
+
+## Passe 3 : scénarios
 
 > Tu relis la section Scénarios d'une spec fonctionnelle, en la confrontant aux règles. Ignore l'annexe « enquête » si elle existe : elle n'appelle aucun scénario.
 >
@@ -39,7 +53,7 @@ Lance les passes **dans l'ordre** : chaque passe travaille sur la spec corrigée
 > 3. Pour chaque scénario, recalcule le résultat attendu à partir du déroulé et des seules règles citées. Signale tout résultat qu'on ne peut pas calculer sans deviner, ou qui contredit une règle.
 > 4. Signale un titre qui ne dit pas ce que le scénario teste, un déroulé sans valeurs concrètes, et deux scénarios qu'on pourrait fusionner sans perdre en lisibilité.
 
-## Passe 3 : pas de technique
+## Passe 4 : pas de technique
 
 > Tu relis une spec fonctionnelle. Elle doit décrire uniquement ce qui s'observe : ce que voit un utilisateur, ce qui est envoyé, ce qui est autorisé ou refusé, et les délais qui comptent pour le produit.
 >
@@ -49,7 +63,7 @@ Lance les passes **dans l'ordre** : chaque passe travaille sur la spec corrigée
 >
 > L'annexe « enquête », si elle existe, peut citer des chiffres et leur source (« base de production, 5 novembre 2026 »). Signale-y quand même toute requête, nom de table ou nom de champ.
 
-## Passe 4 : français
+## Passe 5 : français
 
 > Relis cette spec comme un lecteur pressé du produit ou du support, qui ne connaît pas le code. Signale chaque phrase qu'il faudrait lire deux fois pour la comprendre, et propose une version plus simple qui garde exactement le même sens. Ne touche pas à ce qui est déjà clair, aux termes définis dans la section Termes, ni aux libellés entre guillemets.
 
@@ -57,6 +71,6 @@ Lance les passes **dans l'ordre** : chaque passe travaille sur la spec corrigée
 
 ## Vérification finale
 
-Après la passe 4, relis toi-même les phrases reformulées : une reformulation peut changer le sens. Vérifie qu'elles disent toujours la même chose que la règle d'origine et qu'elles reprennent les termes tels quels.
+Après la passe 5, relis toi-même les phrases reformulées : une reformulation peut changer le sens. Vérifie qu'elles disent toujours la même chose que la règle d'origine et qu'elles reprennent les termes tels quels.
 
 Puis résume à l'utilisateur, en quelques lignes par passe, ce qui a changé. Pas la liste de chaque virgule : ce qui change le sens ou ce qui était un vrai trou.

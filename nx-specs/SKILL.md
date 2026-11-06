@@ -21,7 +21,7 @@ Aucun nom de champ, de table, d'enum, d'endpoint, de composant, de job ou de cro
 2. Lire l'entrée et choisir le point de départ
 3. Le grill : une question à la fois
 4. Écrire la spec
-5. La relire en quatre passes
+5. La relire en cinq passes
 6. Faire valider, puis mettre à jour Jira
 
 ### 1. Vérifier les prérequis
@@ -78,6 +78,7 @@ Je propose : <ta réponse recommandée>, parce que <raison en une phrase>.
 - « Je ne sais pas » ou « à voir avec X » : propose de garder ta recommandation, ou range la question dans les **questions ouvertes** de la spec.
 - Si quelque chose dans le ticket n'entre dans aucune section du gabarit (notes techniques, préconditions…), demande à l'utilisateur ce qu'il veut en faire plutôt que de le jeter. Voir la fin de `references/gabarit.md`.
 - Ne pose pas de question sur l'ordre de livraison entre tickets : les dépendances sont déjà liées dans Jira, et tous les tickets d'un sprint sont livrés ensemble.
+- Ne propose pas une réponse que tu sais infaisable ou très coûteuse à construire. En cas de doute, propose-la quand même : la passe faisabilité ou un développeur tranchera.
 
 Angles à couvrir, sous forme de questions produit, quand ils s'appliquent :
 
@@ -118,16 +119,17 @@ La spec est écrite en markdown, prête à être collée dans la description du 
 
 Écris comme tu l'expliquerais à un collègue, avec des phrases courtes.
 
-### 5. Relire en quatre passes
+### 5. Relire en cinq passes
 
-Lis `references/relecture.md` et lance les quatre passes, dans l'ordre, chacune dans un sous-agent qui découvre la spec :
+Lis `references/relecture.md` et lance les cinq passes, dans l'ordre, chacune dans un sous-agent qui découvre la spec :
 
 1. cohérence et trous (avec accès au code) ;
-2. scénarios ;
-3. pas de technique ;
-4. français.
+2. faisabilité (avec accès au code) ;
+3. scénarios ;
+4. pas de technique ;
+5. français.
 
-Applique les corrections au fur et à mesure, puis fais la vérification finale décrite dans ce fichier. Si une passe soulève une décision produit, repose une question à l'utilisateur, toujours une seule à la fois.
+Applique les corrections au fur et à mesure, puis fais la vérification finale décrite dans ce fichier. Une décision produit soulevée par une passe se tranche selon le critère de ce fichier.
 
 ### 6. Faire valider, puis mettre à jour Jira
 
