@@ -52,6 +52,7 @@ Une ligne ➡️ peut expliquer la limite en mots simples.
 > 2. Pour chaque effet, cherche les scénarios dont la colonne Règles le cite. Un effet sans scénario est un trou : propose un scénario, ou un ajout à un scénario existant si la même situation permet de le tester.
 > 3. Pour chaque scénario, recalcule le résultat attendu à partir du déroulé et des seules règles citées. Signale tout résultat qu'on ne peut pas calculer sans deviner, ou qui contredit une règle.
 > 4. Signale un titre qui ne dit pas ce que le scénario teste, un déroulé sans valeurs concrètes, et deux scénarios qu'on pourrait fusionner sans perdre en lisibilité.
+> 5. Signale toute action d'un autre ticket dans un déroulé (remplir son formulaire, toucher son bouton). Propose de l'écrire comme un changement d'état (« pendant ce temps, X est passé à Y »), ou, si le scénario teste ce qui suit cette action, de le retirer et de le signaler pour « Trouvé en passant » : il appartient à l'autre ticket.
 
 ## Passe 4 : pas de technique
 

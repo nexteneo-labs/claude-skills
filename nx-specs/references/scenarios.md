@@ -50,7 +50,9 @@ Réflexe : avant d'ajouter un scénario, vérifier si un scénario existant peut
 
 Les scénarios servent de base aux tests automatisés. Une spec ne teste que ses règles, sinon chaque nouveau ticket reteste les précédents.
 
-- Le déroulé part d'un **état** (« 30 compteurs sont en alerte »), que le test pose directement. Une action d'un autre ticket n'y figure que si elle déclenche une règle de celui-ci (S3 de `exemple-f4.md` : un rattachement à une autre PCA en pleine panne).
+- Le déroulé part d'un **état** (« 30 compteurs sont en alerte »), que le test pose directement. Il ne contient que des actions de ce ticket.
+- Un changement qui vient d'ailleurs (un autre ticket, un autre utilisateur, la borne) s'écrit comme un changement d'état, sans dire comment il est fait : le test le pose directement, lui aussi (S3 de `exemple-f4.md` : « 14:30 : il est rattaché à une autre PCA »). Jamais comme une action d'un autre ticket (« il ouvre le formulaire de la PCA et choisit… »).
+- Un comportement qui suit une action d'un autre ticket (la liste qui se met à jour après « Enregistrer ») appartient à cet autre ticket : il s'y écrit et s'y teste.
 - Comment tester un scénario (unitaire, composant, navigateur) relève de l'approche technique.
 
 ## Pas de mécanisme dans un scénario
