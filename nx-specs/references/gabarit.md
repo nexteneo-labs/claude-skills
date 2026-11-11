@@ -50,7 +50,11 @@ Les trois paragraphes doivent se lire en une minute. Le lecteur, humain ou IA, c
 **Hors périmètre** : ce qu'on ne fera pas.
 
 - Seulement ce qu'un lecteur ajouterait de bonne foi, pas la liste de tout ce que la feature ne fait pas.
-- Chaque exclusion dit en une ligne pourquoi on l'écarte (après ➡️, en italique), ou cite le ticket qui s'en charge.
+- Chaque exclusion dit en une ligne pourquoi on l'écarte (après ➡️, en italique). Le plus souvent, c'est l'une de ces raisons toutes prêtes :
+  - ➡️ *chaque spec livre le minimum utile : <ce qui suffit pour le besoin>* ;
+  - ➡️ *DEV-xxx* (le ticket qui s'en charge) ;
+  - ➡️ *plus tard*, quand l'idée est gardée ailleurs (backlog, roadmap).
+- Une raison sur mesure n'est écrite que si l'utilisateur l'a donnée ou si une source la dit (voir « D'où vient la raison », `regles-ecriture.md`).
 
 ## 2. Maquette
 

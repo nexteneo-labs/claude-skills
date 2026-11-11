@@ -99,3 +99,12 @@ Ajoute une ligne introduite par ➡️, en italique, seulement si un lecteur pou
 Sans cette ligne, le 31e compteur sans mail ressemble à un bug, et un dev ou une IA risque de le « corriger ». Elle garde aussi la trace du pourquoi : si le contexte change, on sait quoi revoir.
 
 La ligne ➡️ tient en une phrase. Si le pourquoi repose sur des chiffres mesurés ou sur des options écartées, leur détail va dans l'annexe facultative « enquête » (voir `gabarit.md`).
+
+**D'où vient la raison.** Une ligne ➡️ ne donne qu'une raison dite par l'utilisateur pendant le grill, écrite dans une source (le ticket Jira, une ADR, la doc, le code), ou, pour une décision que tu as tranchée seul, celle qui t'a fait trancher. Ne la déduis jamais d'une conséquence de la décision : une raison inventée est plus trompeuse qu'une raison absente. Si tu ne la connais pas, demande-la (« pourquoi ? ») ; à défaut, écris ➡️ *raison à confirmer* et ajoute une question ouverte.
+
+**Le test de la raison.** Elle répond à « pourquoi pas autrement ? », se comprend sans avoir suivi la conversation, et n'emploie aucun mot que la spec ou le produit n'utilise plus.
+
+À éviter : ➡️ *le seuil se règle compteur par compteur ; un seuil commun obligerait aussi à expliquer le cas d'une PCA dont les compteurs n'ont pas tous le même seuil.*
+Elle a été reconstruite après coup à partir d'une conséquence, elle se lit deux fois, et ce n'était pas la vraie raison.
+
+À écrire : ➡️ *chaque spec livre le minimum utile : un seuil par compteur suffit pour les sites actuels.*

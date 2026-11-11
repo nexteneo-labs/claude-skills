@@ -25,7 +25,8 @@ Lance les passes **dans l'ordre** : chaque passe travaille sur la spec corrigée
 > - Un comportement actuel du produit que la spec change sans le dire, ou qu'elle ignore alors qu'il interagit avec la feature : droits, données existantes au moment de la mise en service, suppression, désactivation, opérateurs en marque blanche. Ce qui relève d'un autre ticket n'est pas un trou : signale-le à part, pour « Trouvé en passant ».
 > - Une phrase qui redit la maquette : propose de la retirer.
 > - Une exclusion du hors périmètre sans raison, ou un cas que la spec devrait exclure explicitement.
-> - Une règle qui surprend sans ligne ➡️ pour dire pourquoi.
+> - Une règle qui surprend sans ligne ➡️. Signale-la sans rédiger de raison : seul l'auteur sait si elle a été donnée.
+> - Une ligne ➡️ qui ne répond pas à « pourquoi pas autrement ? », qu'on ne comprend pas sans contexte, ou qui emploie un mot que la spec ou le produit n'utilise plus.
 > - Si la spec a une annexe « enquête » : un passage de l'annexe qui contredit une règle, ou un chiffre sans date ni source.
 >
 > N'évalue ni le style ni les scénarios : d'autres passes s'en chargent. Tes propositions de correction décrivent un comportement visible, jamais un champ, une table ou un mécanisme.

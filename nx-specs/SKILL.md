@@ -109,6 +109,8 @@ Angles à couvrir, sous forme de questions produit, quand ils s'appliquent :
 
 Pendant le grill, note au fil de l'eau chaque chiffre que tu mesures (avec sa date et sa source) et chaque option écartée (avec sa raison) : ils nourrissent l'annexe facultative « enquête » (voir `references/gabarit.md`).
 
+Note aussi la raison de chaque exclusion et de chaque règle qui surprend, telle que l'utilisateur la donne. Quand tu ne la connais pas, demande-la (« pourquoi ? ») avant d'écrire : ne la reconstruis pas après coup (voir « D'où vient la raison », `references/regles-ecriture.md`).
+
 Arrête le grill quand chaque section du gabarit peut être remplie sans rien inventer. Annonce-le, puis écris la spec.
 
 ### 4. Écrire la spec
