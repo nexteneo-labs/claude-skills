@@ -1,9 +1,5 @@
 # Le gabarit d'une spec
 
-Une spec décrit le comportement attendu d'une feature, tel qu'on peut l'observer : ce que voit un utilisateur, ce qui part par mail, ce qui est autorisé ou refusé. Elle ne dit pas comment le construire.
-
-Elle tient en quatre sections, plus une cinquième tant qu'il reste des questions ouvertes, et parfois une annexe.
-
 | # | Section | Contenu |
 | --- | --- | --- |
 | 1 | Besoin, principe et hors périmètre | Pourquoi on le fait, comment ça marche en quelques lignes, ce qui n'est pas fait dans cette itération. |
@@ -11,7 +7,7 @@ Elle tient en quatre sections, plus une cinquième tant qu'il reste des question
 | 3 | Règles | Des termes, puis le comportement attendu pour chaque situation possible. |
 | 4 | Scénarios | Des situations concrètes avec leur résultat attendu, qui testent chaque règle. |
 | 5 | Questions ouvertes | Seulement s'il en reste. Leur présence veut dire que la spec n'est pas terminée. |
-| | Annexe : enquête | Facultative. Les chiffres et les options écartées qui ont orienté les décisions. |
+| | Annexe : enquête | Facultative. Les chiffres, les options et les combinaisons écartées qui ont orienté les décisions. |
 
 ## Où se place chaque altitude
 
@@ -23,11 +19,9 @@ Une idée passe par cinq altitudes. La spec s'arrête à la troisième.
 4. Approche technique : « Un cron toutes les 10 minutes cherche les compteurs dont offlineCountdownStartedAt dépasse 60 minutes. » ← hors spec
 5. Code. ← hors spec
 
-La spec est l'endroit où les dernières questions produit sont tranchées. Tout ce qui relève des niveaux 4 et 5 appartient au dev : le fixer trop tôt réduit ses options.
-
 ## 1. Besoin, principe et hors périmètre
 
-Les trois paragraphes doivent se lire en une minute. Le lecteur, humain ou IA, comprend la feature avant d'en lire le détail.
+Les trois paragraphes doivent se lire en une minute.
 
 **Besoin** : une user story.
 
@@ -37,10 +31,7 @@ Les trois paragraphes doivent se lire en une minute. Le lecteur, humain ou IA, c
 **Afin de** <bénéfice concret>
 ```
 
-- *En tant que* : le rôle qui utilise la feature (admin Cockpit, client Deck, conducteur, pôle Opération…).
-- *Je veux* : ce que le rôle doit pouvoir faire, sans présumer de la solution.
-- *Afin de* : le bénéfice concret qui justifie la feature.
-- Le besoin reste vrai quelle que soit la solution choisie.
+*En tant que* : le rôle (admin Cockpit, client Deck, conducteur, pôle Opération…). *Je veux* ne présume pas de la solution : le besoin reste vrai quelle qu'elle soit.
 
 **Principe** : quelques puces qui résument la situation nominale.
 
@@ -84,27 +75,28 @@ Une liste numérotée. Chaque question dit ce qui bloque et, si possible, qui pe
 
 ## Annexe : enquête
 
-Section facultative. Elle garde ce qui a orienté les décisions : les chiffres mesurés et les options étudiées puis écartées. Sans elle, ces éléments se perdent à la fin du grill, et la prochaine personne qui reprend le sujet refait l'enquête, ou rouvre un débat déjà tranché. Elle sert aussi de trace datée pour les dossiers CIR/CII.
+Section facultative : ce qui a orienté les décisions, pour que personne ne refasse l'enquête ni ne rouvre un débat tranché. Elle sert aussi de trace datée pour les dossiers CIR/CII.
 
-**Quand l'écrire** : quand une décision s'appuie sur des chiffres mesurés (dans la base, les logs, un export), ou quand des options ont été étudiées puis écartées. Sinon, on ne met pas l'annexe.
+**Quand l'écrire** : quand une décision s'appuie sur des chiffres mesurés (dans la base, les logs, un export), quand des options ont été étudiées puis écartées, ou quand la passe « combinaisons » a écarté des constats. Sinon, on ne met pas l'annexe.
 
 **Ce qu'elle contient** :
 
 - **Constat** : la situation qui a lancé le sujet, avec des exemples concrets.
 - **Mesures** : chaque chiffre avec sa date et sa source (« base de production, 5 novembre 2026 »), et ce qu'il ne dit pas (un biais, des valeurs écartées).
 - **Options étudiées et écartées** : un tableau `Option | Pourquoi elle est écartée`.
+- **Combinaisons écartées** : un tableau `Combinaison | Pourquoi elle n'est pas traitée`, la raison étant l'une de : peu probable dans l'usage réel, sans conséquence grave, hors périmètre de cette spec. Une ligne par combinaison, dite en mots produit.
 - **Liens** : les tickets et idées liés.
 
 **Ses limites** :
 
 - Elle commence par la ligne : *Annexe informative : en cas d'écart, les règles font foi.* Elle explique les décisions sans en prendre aucune.
 - Pas de technique, comme dans le reste de la spec : les mesures sont décrites avec les mots du produit. Les requêtes qui ont produit les chiffres vont dans un commentaire du ticket, si l'utilisateur veut les garder.
-- Une ligne ➡️ d'une règle donne le pourquoi en une phrase. L'annexe garde le détail : on n'y recopie pas les règles.
+- On n'y recopie pas les règles.
 
 ## Ce qui n'entre dans aucune section
 
 Les anciens tickets contiennent souvent « Préconditions », « Impacts », « Pour les devs », « Checklist » ou « Acceptance criteria ».
 
 - Acceptance criteria et checklists deviennent des **scénarios**.
-- Les dépendances entre tickets (« à livrer avec DEV-1037 ») ne vont pas dans la spec : elles sont déjà liées dans Jira, et tous les tickets d'un sprint sont livrés ensemble. La spec décrit le sprint livré. Un autre ticket n'est cité que dans une règle qui repose sur lui. Ce qui lui appartient ne se décrit pas ici, même par un renvoi (« ce que fait le clic : voir DEV-1037 ») ; s'il manque, il va dans « Trouvé en passant ».
+- Les dépendances entre tickets (« à livrer avec DEV-1037 ») ne vont pas dans la spec. Un autre ticket n'est cité que dans une règle qui repose sur lui. Ce qui lui appartient ne se décrit pas ici, même par un renvoi (« ce que fait le clic : voir DEV-1037 ») ; s'il manque, il va dans « Trouvé en passant ».
 - Les notes techniques (chemins de fichiers, composants, guards, noms de champs) sortent de la spec. Ne les jette pas sans le dire : signale-les à l'utilisateur et demande où il veut les garder, par exemple dans un commentaire du ticket pour l'étape d'approche technique.

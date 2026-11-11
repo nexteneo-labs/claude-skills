@@ -1,6 +1,6 @@
 # Relecture en plusieurs passes
 
-Chaque passe est confiée à un sous-agent qui découvre la spec. Quand on se relit dans le contexte où on l'a écrite, on valide surtout ce qu'on vient d'écrire. Un lecteur neuf voit mieux les trous et les phrases lourdes.
+Chaque passe est confiée à un sous-agent qui découvre la spec. Un lecteur neuf voit les trous et les phrases lourdes qu'on ne voit plus.
 
 Chaque sous-agent reçoit :
 
@@ -45,7 +45,19 @@ Lance les passes **dans l'ordre** : chaque passe travaille sur la spec corrigée
 
 Une ligne ➡️ peut expliquer la limite en mots simples.
 
-## Passe 3 : scénarios
+## Passe 3 : combinaisons
+
+> Tu relis les règles d'une spec fonctionnelle Nexteneo, en cherchant ce qui casse quand deux perturbations arrivent ensemble.
+>
+> 1. Liste les perturbations que la spec connaît : échec, résultat inconnu (réponse perdue), action répétée, ajout, modification ou suppression par une autre personne ou un autre système, page fermée, retour sur la page.
+> 2. Pour chaque règle, vérifie qu'elle donne encore un résultat sensé quand deux de ces perturbations arrivent ensemble.
+> 3. Signale toute règle dont la condition repose sur une hypothèse implicite, en particulier une condition écrite sur une suite d'événements (« l'autre a retiré… ») plutôt que sur l'état final (« le groupe n'aurait plus aucune borne »).
+>
+> Le résultat attendu est surtout une règle reformulée, sans règle ni scénario de plus. Ne propose d'ajouter quelque chose que si la combinaison est plausible dans l'usage réel **et** que son résultat serait grave : donnée perdue ou fausse sans que personne le voie, action sensible mal attribuée. Classe chaque constat : « reformulation », « ajout essentiel » ou « probablement non essentiel ». Ce qui dépend de la façon de construire (requêtes, rechargements, verrous, délais internes) n'entre pas dans la spec : ne propose rien de tel.
+
+Le seuil est volontairement haut : une combinaison peu plausible, ou sans conséquence grave, est écartée, même si elle est juste. Beaucoup de constats peuvent finir écartés ; ce n'est pas un échec de la passe. Applique les reformulations ; un « ajout essentiel » se tranche avec la matrice. Chaque combinaison écartée va dans l'annexe « enquête », tableau « Combinaisons écartées », avec sa raison (`references/gabarit.md`).
+
+## Passe 4 : scénarios
 
 > Tu relis la section Scénarios d'une spec fonctionnelle, en la confrontant aux règles. Ignore l'annexe « enquête » si elle existe : elle n'appelle aucun scénario.
 >
@@ -55,7 +67,7 @@ Une ligne ➡️ peut expliquer la limite en mots simples.
 > 4. Signale un titre qui ne dit pas ce que le scénario teste, un déroulé sans valeurs concrètes, et deux scénarios qu'on pourrait fusionner sans perdre en lisibilité.
 > 5. Signale un scénario qui concerne un autre ticket : sa place est dans cet autre ticket. Signale aussi un changement venu d'ailleurs écrit comme une action (« il ouvre le formulaire de la PCA et choisit… ») : propose de l'écrire comme un changement d'état (« 14:30 : il est rattaché à une autre PCA »).
 
-## Passe 4 : pas de technique
+## Passe 5 : pas de technique
 
 > Tu relis une spec fonctionnelle. Elle doit décrire uniquement ce qui s'observe : ce que voit un utilisateur, ce qui est envoyé, ce qui est autorisé ou refusé, et les délais qui comptent pour le produit.
 >
@@ -65,7 +77,7 @@ Une ligne ➡️ peut expliquer la limite en mots simples.
 >
 > L'annexe « enquête », si elle existe, peut citer des chiffres et leur source (« base de production, 5 novembre 2026 »). Signale-y quand même toute requête, nom de table ou nom de champ.
 
-## Passe 5 : français
+## Passe 6 : français
 
 > Relis cette spec comme un lecteur pressé du produit ou du support, qui ne connaît pas le code. Signale chaque phrase qu'il faudrait lire deux fois pour la comprendre, et propose une version plus simple qui garde exactement le même sens. Ne touche pas à ce qui est déjà clair, aux termes définis dans la section Termes, ni aux libellés entre guillemets.
 
@@ -73,6 +85,6 @@ Une ligne ➡️ peut expliquer la limite en mots simples.
 
 ## Vérification finale
 
-Après la passe 5, relis toi-même les phrases reformulées : une reformulation peut changer le sens. Vérifie qu'elles disent toujours la même chose que la règle d'origine et qu'elles reprennent les termes tels quels.
+Après la passe 6, relis toi-même les phrases reformulées : une reformulation peut changer le sens. Vérifie qu'elles disent toujours la même chose que la règle d'origine et qu'elles reprennent les termes tels quels.
 
 Puis résume à l'utilisateur, en quelques lignes par passe, ce qui a changé. Pas la liste de chaque virgule : ce qui change le sens ou ce qui était un vrai trou.

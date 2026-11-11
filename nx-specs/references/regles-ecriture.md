@@ -2,26 +2,13 @@
 
 ## Les termes
 
-Chaque feature a ses propres notions. Comme la section « Définitions » d'un contrat, la sous-section **Termes** les définit une fois ; les règles les reprennent ensuite tels quels.
-
-Ce que ça apporte :
-
-- des règles plus courtes : un mot remplace une condition de plusieurs lignes ;
-- un sens identique dans toutes les règles ;
-- une seule ligne à modifier si la définition change.
-
-Comment l'écrire :
+La sous-section **Termes** définit une fois les notions de la feature ; les règles les reprennent tels quels.
 
 - le mot en gras, puis ce qu'il veut dire en une phrase simple ;
 - s'il faut des cas pour dire qui ou quoi est concerné, ils vont dans une règle, et le terme y renvoie (« voir R1 ») ;
 - un terme est utile dès qu'un mot au sens peu intuitif revient dans plusieurs règles.
 
-Exemple de ce qu'un terme évite. Avant, la même condition était recopiée dans deux règles :
-
-> « Si le monitoring du compteur est forcé, ou s'il est réglé selon la configuration smart charging et que la config smart charging de sa PCA est active, et qu'il n'a pas été lu depuis 15 minutes, alors il est lu. »
-> « Si le monitoring du compteur est forcé, ou s'il est réglé selon la configuration smart charging et que la config smart charging de sa PCA est active, et qu'il n'a fourni aucune lecture réussie depuis 60 minutes, alors un mail d'alerte part. »
-
-Dans la vraie spec, l'une des copies a fini par dire le contraire de l'autre. Après :
+Exemple :
 
 > **Compteur monitoré** : un compteur dont on surveille la connexion (voir R1).
 > R2. Chaque **compteur monitoré** est lu au moins toutes les 15 minutes, même sans recharge en cours.
@@ -32,7 +19,7 @@ Numérote les règles R1, R2… avec un titre court. Quand une règle est une ta
 
 ### 1. Une seule interprétation possible
 
-Deux lecteurs doivent en tirer le même comportement. Une règle se lit comme un contrat : une clause à deux sens risque d'être mal implémentée.
+Deux lecteurs doivent en tirer le même comportement.
 
 À éviter : « Chaque modification enregistre l'utilisateur, la date, l'ancienne et la nouvelle valeur. »
 Cliquer sur Enregistrer sans rien changer, est-ce une modification ? Deux lectures possibles, deux comportements.
@@ -56,14 +43,12 @@ Le « sinon » décide pour des cas que personne n'a regardés : vide, négatif,
 | Plus de 0, jusqu'à P | Aucun | Autorisé |
 | Plus que P | Avertissement « Dépasse la puissance maximum (P kW). » | Autorisé |
 
-C'est ici que le code aide le plus : les valeurs possibles d'un champ, les états existants, les rôles, ce qui se passe déjà aujourd'hui. Cherche-les dans le code, puis décris chaque cas avec des mots du produit.
+**Écris les conditions sur l'état final, pas sur la suite d'événements.** « Le groupe n'aurait plus aucune borne » tient quoi qu'ait fait l'autre admin ; « l'autre admin a retiré les bornes qu'on gardait » suppose qu'il n'a rien fait d'autre. Une condition qui décrit des événements dit pourquoi elle ne peut pas décrire l'état.
 
 ### 3. Elle laisse l'implémentation au dev
 
-Ce qui s'observe va dans la règle. Champs, tables, endpoints, jobs, crons et composants sont laissés au dev.
-
 À éviter : « SI (electricMeter.monitoring = "forced" OU (…)) ET (now − offlineCountdownStartedAt) ≥ 60 minutes ET (…) ALORS envoi d'un mail. »
-Elle choisit à la place du dev les champs et la façon de les comparer, et elle se trompe de nom au passage (« monitoring » ici, « monitoringMode » ailleurs).
+Elle choisit à la place du dev les champs et la façon de les comparer.
 
 À écrire : « Quand un **compteur passe en alerte**, un mail d'alerte part dans les 10 minutes. Un seul mail par période sans lecture réussie. »
 La règle se lit sans connaître le code, et la tolérance de 10 minutes laisse au dev le choix du mécanisme.
@@ -96,7 +81,7 @@ Ajoute une ligne introduite par ➡️, en italique, seulement si un lecteur pou
 > R4. Quand plus de 30 compteurs sont en alerte, un seul mail groupé part. Tant qu'ils sont plus de 30, aucun mail d'alerte individuel ne part.
 > ➡️ *Au-delà de 30, la panne est générale (réseau, serveur) : une liste de compteurs serait illisible, et déjà fausse au moment où on la lit.*
 
-Sans cette ligne, le 31e compteur sans mail ressemble à un bug, et un dev ou une IA risque de le « corriger ». Elle garde aussi la trace du pourquoi : si le contexte change, on sait quoi revoir.
+Sans cette ligne, le 31e compteur sans mail ressemble à un bug, et un dev ou une IA risque de le « corriger ».
 
 La ligne ➡️ tient en une phrase. Si le pourquoi repose sur des chiffres mesurés ou sur des options écartées, leur détail va dans l'annexe facultative « enquête » (voir `gabarit.md`).
 
