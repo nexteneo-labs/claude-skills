@@ -10,7 +10,7 @@ Chaque sous-agent reçoit :
 
 Il renvoie une liste de constats. Pour chacun : l'endroit (R3, S5, Principe…), le problème en une phrase, une correction proposée. S'il ne trouve rien, il le dit.
 
-Lance les passes **dans l'ordre** : chaque passe travaille sur la spec corrigée par la précédente. Toi, l'agent principal, tu appliques les corrections que tu juges justes, y compris celles qui changent une décision produit quand le choix est évident : il garde l'intention de la règle et ne retire rien d'important à l'utilisateur. Ne pose une question (une seule à la fois, comme pendant le grill) que pour un vrai dilemme : plusieurs options raisonnables aux conséquences différentes, ou une correction qui retire quelque chose d'important. Chaque décision produit que tu as tranchée seul figure dans le résumé de la relecture.
+Lance les passes **dans l'ordre** : chaque passe travaille sur la spec corrigée par la précédente. Toi, l'agent principal, tu appliques les corrections que tu juges justes. Une correction qui change une décision produit se tranche avec le critère « Qui tranche » du grill (`SKILL.md`, étape 3) : tu l'appliques seul ou tu poses la question (une seule à la fois, comme pendant le grill). Chaque décision produit que tu as tranchée seul figure dans le résumé de la relecture.
 
 ---
 

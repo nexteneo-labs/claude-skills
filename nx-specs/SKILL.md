@@ -56,7 +56,23 @@ Selon ce que tu trouves :
 
 ### 3. Le grill : une question à la fois
 
-Le but est de trancher toutes les décisions produit avant d'écrire, en remontant chaque branche de l'arbre de décisions. Tu peux tout challenger, y compris le besoin lui-même. Ne pose que les questions importantes : tranche toi-même les questions triviales. Commence par les plus structurantes, celles dont la réponse change le reste (le besoin, l'approche retenue, qui a le droit de faire quoi), et garde les détails pour la fin : une réponse en début de grill peut rendre caduques plusieurs questions de détail.
+Le but est de trancher toutes les décisions produit avant d'écrire, en remontant chaque branche de l'arbre de décisions. Tu peux tout challenger, y compris le besoin lui-même. Commence par les questions les plus structurantes, celles dont la réponse change le reste (le besoin, l'approche retenue, qui a le droit de faire quoi), et garde les détails pour la fin : une réponse en début de grill peut rendre caduques plusieurs questions de détail.
+
+**Qui tranche.** L'utilisateur ne lit pas de récapitulatif : ce que tu tranches seul doit être sûr, pas seulement rattrapable. Juge chaque décision sur deux axes, l'enjeu et l'évidence de la réponse.
+
+L'enjeu se mesure à ce que coûte une erreur : **faible** si elle se corrige en quelques minutes sans que personne ne la remarque, **fort** si elle est coûteuse ou impossible à défaire, **moyen** entre les deux.
+
+La réponse est **très évidente** quand le code, le ticket ou une autre spec y répond, ou quand une option est nettement meilleure que les autres. Elle est **plutôt évidente** quand tu as une option préférée avec une vraie raison, mais qu'une autre se défend. Sinon, il n'y a **pas de réponse évidente**.
+
+| | Enjeu faible | Enjeu moyen | Enjeu fort |
+| --- | --- | --- | --- |
+| Réponse très évidente | tranche | tranche | tranche |
+| Réponse plutôt évidente | tranche | tranche | demande |
+| Pas de réponse évidente | tranche | demande | demande |
+
+Une exception : une décision qui change le besoin ou le périmètre (ajouter ou retirer quelque chose à la feature, en changer le but, section 1 de la spec) se demande toujours, même quand elle te paraît évidente.
+
+Quand tu tranches seul, l'option écartée et sa raison vont dans tes notes pour l'annexe « enquête » (voir plus bas).
 
 **Pose une seule question par message, puis attends la réponse.** Plusieurs questions à la fois noient l'utilisateur, qui répond à la moitié. Ne passe à la suite que quand la réponse est claire. Si elle ouvre une nouvelle question, c'est le message suivant.
 
