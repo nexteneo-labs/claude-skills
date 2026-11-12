@@ -8,7 +8,7 @@ description: Implémente une spec en cours de l'app Mariage (`docs/specs/en-cour
 But : la spec devient du code testé, en prenant le moins de temps possible à l'utilisateur. Il ne voit que les vraies décisions et une restitution courte ; tu tranches, vérifies et consignes le reste.
 
 - **Juste le nécessaire** (Extreme Programming) : rien au-delà de la spec. Une amélioration se propose en une ligne ; elle n'entre dans `docs/ROADMAP.md` qu'avec accord.
-- **Proportionné** : tout le déroulé pour un mécanisme nouveau (affichage avant la réponse du serveur, synchronisation, migration de données, surface d'attaque). Sinon : `decisions-techniques.md` en quelques lignes, pas de revue du plan, une seule revue de code (deux angles, 500 mots).
+- **Toujours le même déroulé, à la taille de la spec** : un plan, sa relecture, deux revues de code. Ces étapes ne prennent pas de temps à l'utilisateur : ne les saute pas, raccourcis-les. Une petite spec donne un plan de quelques lignes et des relectures courtes.
 
 ## 0. Cadrer
 
@@ -24,11 +24,11 @@ Avant tout code, écris le plan dans `decisions-techniques.md` à côté de la s
 
 Toute garantie attendue d'une bibliothèque se vérifie dans son code (`node_modules/`) ; cite la fonction dans le plan.
 
-Un choix qui fixe un modèle pour les specs suivantes est un enjeu fort, même si la spec semble le trancher.
+Un choix qui crée ou change un principe de `docs/adr/` (au-delà d'un nom ou d'un chemin) est un enjeu fort, même si la spec semble le trancher.
 
 ## 2. Faire relire le plan
 
-Un agent indépendant challenge le plan (prompt : `references/revues.md`). Arbitre chaque remarque.
+Un agent indépendant challenge le plan, toujours (prompt : `references/revues.md`). Arbitre chaque remarque.
 
 ## 3. Questions du plan
 
@@ -96,4 +96,4 @@ Ni liste de fichiers, ni scénarios un par un.
 
 ## Rétro
 
-Questions toutes fermées : propose la rétro en une ligne, lance-la sur un oui. Quelques lignes : ce qui a manqué au plan, ce que les revues seules ont trouvé, ce qui a coûté du temps à l'utilisateur ; pour chaque leçon, où elle irait (ce skill, `/specs`, `docs/CONVENTIONS.md`, `docs/adr/`). **Jamais de modification d'un skill sans accord.**
+Questions toutes fermées : propose la rétro en une ligne, lance-la sur un oui. Quelques lignes : ce qui a manqué au plan, ce que les revues seules ont trouvé, ce qui a coûté du temps à l'utilisateur ; pour chaque leçon, où elle irait (ce skill, `/specs`, `docs/CONVENTIONS.md`, `docs/adr/`). Une leçon pour un skill remplace ou généralise une règle existante, ou dit pourquoi elle ne peut pas ; une consigne déjà écrite et pas appliquée n'est pas une leçon nouvelle. Ce qui ne vaut que pour cette spec reste dans son `decisions-techniques.md`. **Jamais de modification d'un skill sans accord.**

@@ -2,7 +2,7 @@
 
 L'agent reçoit des fichiers, jamais tes messages ni tes conclusions. Il ne modifie rien, ne lance ni E2E ni base (`pnpm test`, `pnpm check` permis). Chaque prompt se termine par :
 
-> Constats seulement, du plus grave au moins grave. Pour chacun : fichier:ligne, le problème, un scénario concret (actions → résultat visible faux), ta confiance, vérifié de bout en bout ou soupçonné. Moins de 800 mots.
+> Constats seulement, du plus grave au moins grave. Pour chacun : fichier:ligne, le problème, un scénario concret (actions → résultat visible faux), ta confiance, vérifié de bout en bout ou soupçonné. Au plus 800 mots, moins pour un petit plan ou un petit diff.
 
 ## Plan (étape 2)
 

@@ -2,6 +2,8 @@
 
 Figé avec la spec livrée. Ce qui restera vrai et peut surprendre devient aussi un principe court dans `docs/adr/` (`docs/adr/template.md`) : le plan garde le débat, le principe la règle.
 
+À la taille de la spec : pour une petite spec, quelques lignes par section, et les sections sans objet sont omises.
+
 ## Gabarit
 
 ```markdown
